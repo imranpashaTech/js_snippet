@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="cust_time"></div>
+
+<script>
+function get_time() {
+var today = new Date();
+var hr = today.getHours();
+var min = today.getMinutes();
+
+var html = "<select>";
+if(min<30)
+{
+	html = html + "<option value="+hr+":30>"+hr+":30</option>";
+}
+hr=hr+1;
+for(var i = 0; hr < 24; hr++,i++){
+		html = html + "<option value="+hr+":00>"+hr+":00</option>";
+    	html = html + "<option value="+hr+":30>"+hr+":30</option>";
+    
+}
+html=html+"</select>";
+
+
+
+
+    document.getElementById("cust_time").innerHTML = html;
+}
+get_time();
+</script>
+
+</body>
+</html>
